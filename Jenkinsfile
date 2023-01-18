@@ -1,4 +1,4 @@
-def imagename = "PoulomiDeblala/basic-banking-system"
+def imagename = "poulomideblala/basic-banking-system"
 def dockerImage = ''
 
  
@@ -21,7 +21,7 @@ node {
     // some block
        {
             sh "docker login -u ${env.DocCredUser} -p ${env.DocCredPassword}"
-            sh 'docker push PoulomiDeblala/basic-banking-system:latest'
+            sh 'docker push poulomideblala/basic-banking-system:latest'
        }
     }
     node('Kubes') {
