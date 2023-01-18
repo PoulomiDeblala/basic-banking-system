@@ -20,7 +20,7 @@ node {
          withCredentials([usernamePassword(credentialsId: '00aa31c4-f238-4584-abba-5f79a08b2201', passwordVariable: 'dockerpwd', usernameVariable: 'poulomideblala')]) 
     // some block
        {
-            sh "docker login -u ${env.DocCredUser} -p ${env.DocCredPassword}"
+            sh "docker login -u ${env.poulomideblala} -p ${env.dockerpwd}"
             sh 'docker push poulomideblala/basic-banking-system:latest'
        }
     }
