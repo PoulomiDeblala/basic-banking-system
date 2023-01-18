@@ -1,11 +1,14 @@
 def imagename = "poulomideblala/basic-banking-system"
 def dockerImage = ''
-
- 
-
 node {
-    stage('Cloning Git') {
+ def sonarScanner = tool name: 'sonarqube', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
+    stage('Git checkout') {
         git(url: 'https://github.com/PoulomiDeblala/basic-banking-system.git', branch: 'main')
+    }
+      stage('Code Analysis'){
+        withSonarQubeEnv(credentialsId: '966a39dc-c454-4ec7-b713-8b431cf339c3') {
+            sh "${sonarScanner}/bin/sonar-scanner -Dsonar.projectKey=SonarQube -Dsonar.sources=."
+        }
     }
     stage('Build Project') {
         sh "npm i"
