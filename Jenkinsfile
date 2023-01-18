@@ -27,7 +27,7 @@ node {
             sh 'docker push poulomideblala/basic-banking-system:latest'
        }
     }
-    node('Kubes') {
+    node('kubes') {
         stage('Run App') {
             sh """
                 kubectl get pods
