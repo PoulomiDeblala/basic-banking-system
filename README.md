@@ -1,4 +1,4 @@
-﻿# basic-banking-system
+﻿# basic-banking-systems
 This is a basic banking system created using Node.js and MongoDB database.
 
 ## Mongo DB Installation and Setup Instructions
